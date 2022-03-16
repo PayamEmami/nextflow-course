@@ -15,13 +15,13 @@ ssh -AX youusername@rackham.uppmax.uu.se
 Make a directory in your userspace
 
 ```bash
-mkdir -p /crex/proj/uppmax2021-2-3/nobackup/$USER/nextflow_lab
+mkdir -p /crex/proj/uppmax2022-2-10/nobackup/$USER/nextflow_lab
 ```
 
 Navigate to the folder you have created
 
 ```bash
-cd /crex/proj/uppmax2021-2-3/nobackup/$USER/nextflow_lab
+cd /crex/proj/uppmax2022-2-10/nobackup/$USER/nextflow_lab
 ```
 
 Load Nexflow
@@ -37,14 +37,14 @@ module load Nextflow/20.10.0
 Fix some environmental variables:
 
 ```
-export NXF_SINGULARITY_CACHEDIR=/crex/proj/uppmax2021-2-3/metabolomics/singularity
+export NXF_SINGULARITY_CACHEDIR=/crex/proj/uppmax2022-2-10/metabolomics/singularity
 ```
 
 You are now ready to start!
 
 **The container for both of the following parts is “metaboigniter/course_docker:v5” and we want to use SLURM to run the jobs. **
 
-**IMPORTANT: DO NOT remove, change, add anything here and in its subfolders: ** /crex/proj/uppmax2021-2-3/metabolomics
+**IMPORTANT: DO NOT remove, change, add anything here and in its subfolders: ** /crex/proj/uppmax2022-2-10/metabolomics
 
 
 # For part 1, you should send us the modified main.nf and nextflow.config. For part 2, you will have to send us a main.nf, nextflow.config and a PCA plot!
@@ -57,7 +57,7 @@ In this part, we will run a small pipeline together. The pipeline is already in 
 Copy the pipeline and the configuration file
 
 ```bash
-cp -r /crex/proj/uppmax2021-2-3/metabolomics/xcms_pipeline .
+cp -r /crex/proj/uppmax20212-2-10/metabolomics/xcms_pipeline .
 ```
 
 Now you have all the required files in your folder. Try to run the pipeline
