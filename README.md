@@ -8,25 +8,37 @@ You need to do this every time you start the lap…
 
 First ssh to Uppmax
 
+```bash
 ssh -AX youusername@rackham.uppmax.uu.se
+```
 
 Make a directory in your userspace
 
+```bash
 mkdir -p /crex/proj/uppmax2021-2-3/nobackup/$USER/nextflow_lab
+```
 
 Navigate to the folder you have created
 
+```bash
 cd /crex/proj/uppmax2021-2-3/nobackup/$USER/nextflow_lab
+```
 
 Load Nexflow
 
+```bash
 module load bioinfo-tools
+```
 
+```bash
 module load Nextflow/20.10.0
+```
 
 Fix some environmental variables:
 
+```
 export NXF_SINGULARITY_CACHEDIR=/crex/proj/uppmax2021-2-3/metabolomics/singularity
+```
 
 You are now ready to start!
 
@@ -44,20 +56,27 @@ In this part, we will run a small pipeline together. The pipeline is already in 
 
 Copy the pipeline and the configuration file
 
+```bash
 cp -r /crex/proj/uppmax2021-2-3/metabolomics/xcms_pipeline .
+```
 
 Now you have all the required files in your folder. Try to run the pipeline
 
+```bash
 cd xcms_pipeline 
+```
 
+```bash
 nextflow main.nf -profile uppmax --project "uppmax2021-2-3" --clusterOptions "-M snowy"
+```
 
 You can open another terminal window and ssh to Uppmax and use jobinfo to see whether your jobs are running or not! If you realized that won’t run for some steps, it might be because of RAM, CPU, or running time. In the nextflow.config, I have commented out the memory, CPU, and time requirement of the processes. You can uncomment them!
 
 Please remember that there is a high chance that Uppmax becomes very slow because the jobs are heavy. So Please consider canceling your jobs if you already know and have a feeling about how Uppmax runs your jobs
 
+```bash
 scancel -u $USER -M snowy
-
+```
 
 
 *   Exercise one: There are some hardcoded parameters part of the pipeline:
