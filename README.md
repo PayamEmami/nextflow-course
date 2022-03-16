@@ -70,7 +70,7 @@ cd xcms_pipeline
 nextflow main.nf -profile uppmax --project "uppmax2021-2-3" --clusterOptions "-M snowy"
 ```
 
-You can open another terminal window and ssh to Uppmax and use jobinfo to see whether your jobs are running or not! If you realized that won’t run for some steps, it might be because of RAM, CPU, or running time. In the nextflow.config, I have commented out the memory, CPU, and time requirement of the processes. You can uncomment them!
+You can open another terminal window and ssh to Uppmax and use jobinfo to see whether your jobs are running or not! If you realized that won’t run for some steps, it might be because of RAM, CPU, or running time. In the nextflow.config, you can change these parameters!
 
 Please remember that there is a high chance that Uppmax becomes very slow because the jobs are heavy. So Please consider canceling your jobs if you already know and have a feeling about how Uppmax runs your jobs
 
