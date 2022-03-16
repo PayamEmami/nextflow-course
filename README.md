@@ -198,21 +198,13 @@ Remember that this process should publish its result to a specific directory (yo
 Help me: [publish the results](https://www.nextflow.io/docs/latest/process.html#publishdir)
 
 
-## Assignment 2
+## Assignment 2 (optional, gives extra points)
 
 Given the output from the last step of the pipeline, do a PCA on the data. The output of the last step is a csv file (comma separated) and the first column is the header. The missing values are designated by NA. 
-
-
-## Assignment 3 (optional, gives extra points)
 
 Can you add your script (PCA) as an extra node part of the pipeline? You don’t have to use containers, you can use conda or whatever you like! There are R and Python already available in the container, you can also use [conda](https://www.nextflow.io/docs/latest/process.html#conda) or [modules](https://www.nextflow.io/docs/latest/process.html#module)
 
 If you don’t know what PCA is or how to do it, please let us know!
-
-
-## Assignment 4 (optional but with a reward!)
-
-One of the major problems with these pipelines is that when you run them, they will go from start to end! However, there are some tricks that you can think of to “pause” the pipeline. Why do we want to do that? Because some steps generate some data that is going to the next step and the parameters for the next step have to be tuned with respect to the incoming data. It would be cool to pause the pipeline, tune the parameters and go forward. You can think about a bash script continuously checking a single or even one of the channels (watchPath) that check for the files. This means the pipeline pauses and checks for a file to be modified to be available and then continues! Try to play around! You don’t have to do that. Ping us if you need more hints!
 
 **IMPORTANT: some time Uppmax file system might cause some of the processes to fail, if this happens, rerun the workflow with -resume option. This might actually pass the step that was previously shown as failed!**
 
